@@ -1,0 +1,47 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Processing Demo</title>
+<script type="text/javascript" src="some.js"></script>
+</head>
+<body>
+<script type="text/processing">
+/** 
+  *
+  *@Author : Jaren Campos
+  *@Version : 1 and 5/16/2019
+  */
+ // welcome to my awesome code that will get me into harvard:}
+PImage uwu;
+PImage yuh;
+int x = 0, y, vy = 0;
+void setup(){
+size(1000,600);
+uwu = loadImage("./img/uwu.jpg"); //Make sure your file is in the same folder
+yuh = loadImage("./img/yuh.png"); //Make sure your file is in the same folder
+}
+void draw() { 
+image(uwu, x, -20);
+image(uwu, x+uwu.width, -20); 
+image(yuh, width/2, y);
+
+x -= 6;
+
+y = y + vy;
+checkImage();
+
+}
+void checkImage(){
+if(x<-uwu.width){
+x = 0; //Reset to beginning
+
+}
+}
+void mousePressed() {
+vy = -17; 
+ }
+
+</script>
+<canvas id="sketch" style="border: 1px solid black;"></canvas>
+</body>
+</html>
